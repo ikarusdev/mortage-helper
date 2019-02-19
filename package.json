@@ -1,0 +1,51 @@
+{
+  "name": "mortgage-helper",
+  "version": "1.0.0",
+  "main": "mortgage-helper.js",
+  "description": "Helper for mortgage calculations in js.",
+  "homepage": "https://github.com/ikarusdev/mortgage-helper",
+  "bugs": "https://github.com/ikarusdev/mortgage-helper/issues",
+  "author": {
+    "name": "Ikarus",
+    "email": "supports@ikarusdev.ca",
+    "url": "https://www.ikarusdev.ca"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikarusdev/mortgage-helper"
+  },
+  "license": "MIT",
+  "files": [
+    "dist",
+    "lib",
+    "mortgage-helper.js"
+  ],
+  "keywords": [
+    "mortgage",
+    "mortgage-helper",
+    "nodejs",
+    "mortgage",
+    "calculator",
+    "mortgage-calculator",
+    "js",
+    "intrerest"
+  ],
+  "devDependencies": {
+    "babel-cli": "~6.26.0",
+    "babel-preset-env": "~1.7.0",
+    "coveralls": "~3.0.2",
+    "jest": "~23.6.0",
+    "rollup": "~0.67.0",
+    "standard": "~12.0.1",
+    "uglify-js": "~3.4.9"
+  },
+  "scripts": {
+    "lint": "npx eslint lib/*.js --fix",
+    "test": "npm run lint && jest --coverage",
+    "test:watch": "jest --coverage --watchAll",
+    "build": "npm run clean && npm run dist && npm run min",
+    "clean": "rimraf ./dist ./coverage",
+    "dist": "rollup lib/mortgage-helper.js --name hmortgage --format iife --file dist/mortgage-helper.js && babel -o dist/mortgage-helper.js dist/mortgage-helper.js",
+    "min": "uglifyjs dist/mortgage-helper.js -c -m -o dist/mortgage-helper.min.js"
+  }
+}
