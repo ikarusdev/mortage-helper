@@ -1,6 +1,6 @@
 {
   "name": "mortgage-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "mortgage-helper.js",
   "description": "Helper for mortgage calculations in js.",
   "homepage": "https://github.com/ikarusdev/mortgage-helper",
